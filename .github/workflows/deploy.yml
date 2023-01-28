@@ -31,6 +31,7 @@ jobs:
       - run: npm run build
       - run: pwd
       - run: ls -lisa
+      - run: ls -lisa dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
@@ -42,3 +43,4 @@ jobs:
       
       - run: pwd
       - run: ls -lisa
+      - run: ls -lisa dist

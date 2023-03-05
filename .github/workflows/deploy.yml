@@ -2,7 +2,7 @@ name: Deploy GitHub Pages
 
 on:
   push:
-    branches: 
+    branches:
       - main
   pull_request:
 
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: "14"
 
       - name: Cache dependencies
         uses: actions/cache@v3
@@ -29,21 +29,6 @@ jobs:
 
       - run: npm install
       - run: npm run build
-      - run: pwd
-      - run: ls -lisa
-      - run: ls -lisa dist
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          allow_empty_commit: true
-      
-      - run: pwd
-      - run: ls -lisa
-      - run: ls -lisa dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

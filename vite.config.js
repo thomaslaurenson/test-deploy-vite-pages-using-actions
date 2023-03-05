@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "https://www.thomaslaurenson.com/vite-github-actions-test-deploy/",
+  base: "https://www.thomaslaurenson.com/test-deploy-vite-pages-using-actions/",
 })
